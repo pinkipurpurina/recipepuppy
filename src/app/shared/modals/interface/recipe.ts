@@ -1,3 +1,8 @@
+import { BoilVolume } from "./boilVolume"
+import { Ingredients } from "./ingredients"
+import { Method } from "./method"
+import { Volume } from "./volume"
+
 export interface Recipe {
   abv: number,
   attenuation_level: number,
@@ -21,45 +26,9 @@ export interface Recipe {
   target_og: number,
   volume: Volume
 }
-export interface BoilVolume{
-unit:string,
-value:string
-}
-export interface Volume{
-  value:number,
-  unit:string
-}
-export interface Method {
-  fermentation: Fermentation,
-  mash_temp: MashTemp
-}
-export interface MashTemp{
-  duration:number,
-  temp:Temp,
-  twist:any
-}
-export interface Temp{
-  unit:string,
-  value:number
-}
-export interface Fermentation { }
 
-export interface Ingredients {
-  malt: Malt,
-  hops: Hops,
-  yeast: string
-}
-export interface Malt {
-  amount: Amount,
-  name: string,
-}
 
-export interface Amount {
-  unit: string,
-  value: number,
-}
-export interface Hops {
-  add: string,
-  amount: Amount,
-  name: string
-}
+
+
+
+
