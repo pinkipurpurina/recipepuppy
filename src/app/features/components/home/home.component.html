@@ -1,11 +1,14 @@
-<mat-card class="center" >
+<mat-card class="center">
   <mat-card-title>Insert recipe name</mat-card-title>
   <mat-form-field class="example-full-width" appearance="fill">
     <mat-label>Recipe name</mat-label>
-    <input matInput placeholder="beer" >
+    <input form matInput placeholder="beers" [formControl]="myControl">
   </mat-form-field>
   <mat-card-actions>
-    <button mat-stroked-button color="primary">Find</button>
+    <button mat-stroked-button color="primary" (click)="send()">Find</button>
   </mat-card-actions>
 </mat-card>
 <br>
+<mat-grid-list cols="3">
+  <app-recipe *ngFor="let item of recipes" [recipe]="item"></app-recipe>
+</mat-grid-list>

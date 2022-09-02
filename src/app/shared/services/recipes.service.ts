@@ -6,16 +6,20 @@ import { Recipe } from 'src/app/shared/modals/interface/recipe';
   providedIn: 'root'
 })
 export class RecipesService {
-private url = 'http://www.recipepuppy.com/api/'
-  constructor(private http: HttpClient) {   }
+  private url = 'https://api.punkapi.com/v2/'//https://api.punkapi.com/v2/beers
+  _recipes: Array<Recipe> = [];
 
-  getRecipes(recipe:string): Observable<any>{
-    return this.http.get<any>('https://api.punkapi.com/v2/beers').pipe(
+  get recipes(){
+    return [...this._recipes]
+  }
+  constructor(private http: HttpClient) { }
+
+  getRecipes(recipe: string): Observable<any> {
+    return this.http.get<any>(this.url + recipe).pipe(
       map(data => {
-          if(data){
-            console.log(data);
-
-          }
-    }))
+        if (data) {
+          this._recipes = data
+        }
+      }))
   }
 }

@@ -1,0 +1,19 @@
+.tablaInfo{    display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+
+}
+.columnas{
+  display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    align-content: center;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+}
+.columna{
+  width: 40%;
+
+}

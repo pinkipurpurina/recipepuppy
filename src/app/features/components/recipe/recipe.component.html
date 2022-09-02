@@ -1,1 +1,77 @@
-<p>recipe works!</p>
+<mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{recipe.name}}</mat-card-title>
+    <mat-card-subtitle>{{recipe.tagline}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src={{recipe.image_url}} alt={{recipe.name}}>
+  <mat-card-content>
+    <p>
+      {{recipe.description}}
+    </p>
+
+    <div class="columnas">
+      <div class="columna">
+        <div class="tablaInfo">
+          <p>ABV: </p>
+          <p>{{recipe.abv}} </p>
+        </div>
+        <div class="tablaInfo">
+          <p>Atenuation level: </p>
+          <p>{{recipe.attenuation_level}}</p>
+        </div>
+
+        <div class="tablaInfo">
+          <p>Srm: </p>
+          <p>{{recipe.srm}} </p>
+        </div>
+        <div class="tablaInfo">
+          <p>Ebc: </p>
+          <p>{{recipe.ebc}}</p>
+        </div>
+        <div class="tablaInfo">
+          <p>Brewed: </p>
+          <p>{{recipe.first_brewed}}</p>
+        </div>
+        <div class="tablaInfo">
+          <p>Tips: </p>
+          <p>{{recipe.brewers_tips}}</p>
+        </div>
+      </div>
+
+      <div class="columna">
+        <div class="tablaInfo">
+          <p>ABV: </p>
+          <p>{{recipe.abv}}</p>
+        </div>
+        <div class="tablaInfo">
+          <p>Ibu: </p>
+          <p>{{recipe.ibu}}</p>
+        </div>
+        <div class="tablaInfo">
+          <p>Ph: </p>
+          <p>{{recipe.ph}}</p>
+        </div>
+
+        <div class="tablaInfo">
+          <p>Fg: </p>
+          <p>{{recipe.target_fg}}</p>
+        </div>
+        <div class="tablaInfo">
+          <p>Og: </p>
+          <p>{{recipe.target_og}}</p>
+        </div>
+        <div class="tablaInfo">
+          <p>Contributed by: </p>
+          <p>{{recipe.contributed_by}}</p>
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+  <mat-divider inset></mat-divider>
+  <mat-tab-group>
+    <mat-tab label="First"> Content 1 </mat-tab>
+    <mat-tab label="Second"> Content 2 </mat-tab>
+    <mat-tab label="Third"> Content 3 </mat-tab>
+  </mat-tab-group>
+</mat-card>
