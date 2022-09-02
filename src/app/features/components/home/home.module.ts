@@ -9,6 +9,7 @@ import {  RecipeComponent } from "../recipe/recipe.component";
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatDividerModule} from '@angular/material/divider';
+import {MatExpansionModule} from '@angular/material/expansion';
 @NgModule({
   declarations: [HomeComponent,RecipeComponent],
   imports: [
@@ -19,7 +20,8 @@ import {MatDividerModule} from '@angular/material/divider';
     ReactiveFormsModule,
     MatGridListModule,
     MatTabsModule,
-    MatDividerModule
+    MatDividerModule,
+    MatExpansionModule
   ]
 })
 export class HomeModule { }

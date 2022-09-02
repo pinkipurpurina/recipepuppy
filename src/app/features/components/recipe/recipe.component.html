@@ -70,8 +70,80 @@
   </mat-card-content>
   <mat-divider inset></mat-divider>
   <mat-tab-group>
-    <mat-tab label="First"> Content 1 </mat-tab>
-    <mat-tab label="Second"> Content 2 </mat-tab>
-    <mat-tab label="Third"> Content 3 </mat-tab>
+    <mat-tab label="Ingredients">
+
+      <mat-accordion>
+        <mat-expansion-panel hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Hops
+            </mat-panel-title>
+            <!-- <mat-panel-description>
+            This is a summary of the content
+          </mat-panel-description> -->
+          </mat-expansion-panel-header>
+          <div class="hops" *ngFor="let hop of recipe.ingredients.hops">
+            <div>
+              <p>Name: {{hop.name}}</p>
+            </div>
+            <div>
+              <p>Add: {{hop.add}}</p>
+            </div>
+            <div>
+              <p>Amount: {{hop.amount.value}} {{hop.amount.unit}}</p>
+            </div>
+          </div>
+        </mat-expansion-panel>
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Malt
+            </mat-panel-title>
+            <!-- <mat-panel-description>
+            Currently I am {{panelOpenState ? 'open' : 'closed'}}
+          </mat-panel-description> -->
+          </mat-expansion-panel-header>
+          <div class="hops" *ngFor="let hop of recipe.ingredients.malt">
+            <div>
+              <p>Name: {{hop.name}}</p>
+            </div>
+            <div>
+              <p>Amount: {{hop.amount.value}} {{hop.amount.unit}}</p>
+            </div>
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+
+    </mat-tab>
+    <mat-tab label="Method">
+
+
+      <div class="hops">
+        <div>
+          <p>Fermentation: {{recipe.method.fermentation.temp.value}} {{recipe.method.fermentation.temp.unit}}</p>
+        </div>
+        <div>
+
+          <div *ngFor="let item of recipe.method.mash_temp">
+            <p>Mash temp: {{item.temp.value}} {{item.temp.unit}}</p>
+            <p>Mash duration: {{item.duration}} </p>
+          </div>
+
+        </div>
+        <div>
+          <p *ngIf="recipe.method.twist">twist: {{recipe.method.twist}}</p>
+        </div>
+      </div>
+
+    </mat-tab>
+    <mat-tab label="Food pairing">
+      <div class="hops">
+        <div *ngFor="let item of recipe.food_pairing">
+          <p>- {{item}}</p>
+
+        </div>
+      </div>
+
+    </mat-tab>
   </mat-tab-group>
 </mat-card>
