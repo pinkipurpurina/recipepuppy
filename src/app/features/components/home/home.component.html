@@ -1,14 +1,31 @@
-<mat-card class="center">
-  <mat-card-title>Insert recipe name</mat-card-title>
-  <mat-form-field class="example-full-width" appearance="fill">
-    <mat-label>Recipe name</mat-label>
-    <input form matInput placeholder="beers" [formControl]="myControl">
-  </mat-form-field>
-  <mat-card-actions>
-    <button mat-stroked-button color="primary" (click)="send()">Find</button>
-  </mat-card-actions>
-</mat-card>
-<br>
-<mat-grid-list cols="3">
-  <app-recipe *ngFor="let item of recipes" [recipe]="item"></app-recipe>
-</mat-grid-list>
+<div class="general">
+  <mat-card class="center">
+    <mat-card-title>Insert recipe name</mat-card-title>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Recipe name</mat-label>
+      <input type="text" matInput placeholder="beers" [(ngModel)]="texto" (keyup)="send($event)">
+    </mat-form-field>
+    <!-- <mat-card-actions>
+      <button mat-stroked-button color="primary">Find</button>
+    </mat-card-actions> -->
+  </mat-card>
+  <br>
+  <div *ngIf="!error" class="cards">
+    <!-- <mat-grid-list  cols="2" rowHeight="1:2">
+      <div *ngFor="let item of recipes">
+        <mat-grid-tile>
+          <app-recipe [item]="item"></app-recipe>
+        </mat-grid-tile>
+      </div>
+    </mat-grid-list> -->
+    <div *ngFor="let item of recipes">
+
+        <app-recipe [item]="item"></app-recipe>
+
+    </div>
+  </div>
+  <div *ngIf="error">
+    <h1 class="error">{{error}}</h1>
+
+  </div>
+</div>

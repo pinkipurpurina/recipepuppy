@@ -1,0 +1,53 @@
+p {
+  font-size: x-small;
+}
+
+.tablaInfo {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+
+}
+
+.columnas {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  align-content: center;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+}
+
+.columna {
+  width: 40%;
+
+}
+
+.hops {
+  padding: 5%;
+  display: flex;
+  transform: none;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imagen {
+  width: auto;
+  max-height: 13em;
+  box-sizing: border-box;
+}
+
+.card {
+  max-width: 20em;
+  margin: auto;
+  margin-bottom: 1em;
+
+}
+
+.caja-imagen {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}

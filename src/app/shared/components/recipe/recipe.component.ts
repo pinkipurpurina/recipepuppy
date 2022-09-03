@@ -1,3 +1,4 @@
+import { Recipe } from 'src/app/shared/modals/interface/recipe';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
@@ -6,12 +7,12 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./recipe.component.css']
 })
 export class RecipeComponent implements OnInit {
-  @Input() recipe : any
+  @Input()  item: Recipe;
   panelOpenState:boolean=false
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.recipe);
+    console.log(this.item);
 
   }
 

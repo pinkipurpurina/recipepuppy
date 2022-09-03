@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map, Observable } from 'rxjs';
+import { catchError, map, Observable } from 'rxjs';
 import { Recipe } from 'src/app/shared/modals/interface/recipe';
 @Injectable({
   providedIn: 'root'
@@ -12,6 +12,9 @@ export class RecipesService {
   get recipes(){
     return [...this._recipes]
   }
+  resetRecipes(){
+   this._recipes =[]
+  }
   constructor(private http: HttpClient) { }
 
   getRecipes(recipe: string): Observable<any> {
@@ -20,6 +23,13 @@ export class RecipesService {
         if (data) {
           this._recipes = data
         }
-      }))
+
+      })
+      // catchError(this.handleError)
+      )
   }
+  // handleError(error){
+  //   console.log(error);
+
+  // }
 }

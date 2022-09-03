@@ -1,13 +1,11 @@
+import { SharedModule } from './shared/shared.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {HomeComponent  } from "./features/components/home/home.component";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RecipeComponent } from './features/components/recipe/recipe.component';
-
+import { FeatureModule } from './features/features.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +14,9 @@ import { RecipeComponent } from './features/components/recipe/recipe.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FeatureModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

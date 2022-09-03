@@ -1,27 +1,20 @@
+import { MaterialModule } from './../../../shared/modules/material/material.module';
+import { RecipeModule } from './../../../shared/components/recipe/recipe.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from "./home.component";
-import {MatInputModule} from '@angular/material/input';
-import {MatButtonModule} from '@angular/material/button';
-import {MatCardModule} from '@angular/material/card';
-import { ReactiveFormsModule } from '@angular/forms';
-import {  RecipeComponent } from "../recipe/recipe.component";
-import {MatGridListModule} from '@angular/material/grid-list';
-import {MatTabsModule} from '@angular/material/tabs';
-import {MatDividerModule} from '@angular/material/divider';
-import {MatExpansionModule} from '@angular/material/expansion';
+import { FormsModule } from '@angular/forms';
+import { SharedModule } from 'src/app/shared/shared.module';
+
+
 @NgModule({
-  declarations: [HomeComponent,RecipeComponent],
+  declarations: [HomeComponent],
   imports: [
     CommonModule,
-    MatInputModule,
-    MatButtonModule,
-    MatCardModule,
-    ReactiveFormsModule,
-    MatGridListModule,
-    MatTabsModule,
-    MatDividerModule,
-    MatExpansionModule
+    RecipeModule,
+    FormsModule,
+    SharedModule,
+    MaterialModule
   ]
 })
 export class HomeModule { }

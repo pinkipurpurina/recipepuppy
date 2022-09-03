@@ -5,3 +5,24 @@
   justify-content: space-around;
   align-items: center;
 }
+.error{
+  display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+.general{
+  background-color: rgb(215, 211, 211);
+  height: 100%;
+}
+.cards{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: space-around;
+  justify-content: space-around;
+  align-items: flex-start;
+  background-color: rgb(215, 211, 211);
+}
