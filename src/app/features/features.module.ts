@@ -7,8 +7,8 @@ import { NgModule } from '@angular/core';
   declarations: [],
   imports: [
     HomeModule,
-    RecipeModule,
-    SharedModule
+   // RecipeModule,
+   // SharedModule
   ]
 })
 export class FeatureModule { }

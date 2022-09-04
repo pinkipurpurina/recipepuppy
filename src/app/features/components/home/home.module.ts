@@ -11,10 +11,10 @@ import { SharedModule } from 'src/app/shared/shared.module';
   declarations: [HomeComponent],
   imports: [
     CommonModule,
-    RecipeModule,
+    //RecipeModule,
     FormsModule,
-    SharedModule,
-    MaterialModule
+   SharedModule,
+   // MaterialModule
   ]
 })
 export class HomeModule { }

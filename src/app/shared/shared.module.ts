@@ -8,6 +8,8 @@ import { RecipeModule } from './components/recipe/recipe.module';
     CommonModule,
     RecipeModule,
     MaterialModule
+  ], exports: [
+    RecipeModule, MaterialModule
   ]
 })
 export class SharedModule { }
